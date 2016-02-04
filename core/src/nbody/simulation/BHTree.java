@@ -10,6 +10,7 @@ public class BHTree {
     private float LENGTH;
     private final float THETA = 0.5f;
 
+    /* the node inner class */
     class Node {
 
         Node NW, NE, SW, SE;
@@ -23,6 +24,10 @@ public class BHTree {
             this.x = x; this.y = y; this.length = length;
         }
 
+        // if node doesn't have a body, simply insert b
+        // if node is a leaf node, create a new node and place it in the appropriate quadtrant
+        // update the current node bodies position and mass
+        // if node is internal, recursively insert body into it and update current nodes body
         private void insert(Body b) {
             if( body == null ) {
                 body = b;

@@ -3,7 +3,6 @@ package nbody.simulation;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
-import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Vector2;
 
 
@@ -61,6 +60,9 @@ public class Body {
         return Vector2.dst(this.rx, this.ry, b.rx, b.ry);
     }
 
+    /* heavier bodies appear reddish, while smaller bodies appear bluish
+     * this is for visualization purposes only and not an actual respresentation
+     * of galaxy spectra */
     public void render(ShapeRenderer renderer) {
         renderer.setColor(new Color(
                 /*0.6f/(1e6f - 1e4f)*m + 48.0f/99.0f.*/0.8f/(1e6f - 1e4f)*m + 19.0f/99.0f,
